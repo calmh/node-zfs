@@ -4,7 +4,7 @@ var zfs = require('zfs');
 
 describe('zfs', function () {
     describe('list', function () {
-        it('returns a list of ZFS objects', function (done) {
+        it('returns a list of ZFS filesystems', function (done) {
             var expected = [ {
                 name: 'zones',
                 used: 1004799731712,
@@ -27,6 +27,31 @@ describe('zfs', function () {
                 mountpoint: '/data'
             } ];
             zfs.list(function (err, list) {
+                should.not.exist(err);
+                list.should.eql(expected);
+                done();
+            });
+        });
+        it('returns a list of ZFS snapshots', function (done) {
+            var expected = [ {
+                name: 'zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120430',
+                used: 1024,
+                refer: 32768,
+                mountpoint: '-'
+            },
+            {
+                name: 'zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120501',
+                used: 1024,
+                refer: 32768,
+                mountpoint: '-'
+            },
+            {
+                name: 'zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120502',
+                used: 1024,
+                refer: 32768,
+                mountpoint: '-'
+            } ];
+            zfs.list({ type: 'snapshot' }, function (err, list) {
                 should.not.exist(err);
                 list.should.eql(expected);
                 done();

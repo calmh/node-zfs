@@ -1,19 +1,39 @@
 #!/bin/sh
 
-case $1 in
-    list)
-        cat <<EOD
+function listFs {
+cat <<EOD
 zones   1004799731712   956926580736    328704  /zones
 zones/f78f9208-9c26-47f7-9e03-881a96d17c04      590843904       10146574336     694054400       /zones/f78f9208-9c26-47f7-9e03-881a96d17c04
 zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data 73728   10146574336     31744   /data
 EOD
-        ;;
-    get)
-        cat <<EOD
+}
+
+function listSnaps {
+cat << EOD
+zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120430  1024    -       32768   -
+zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120501  1024    -       32768   -
+zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120502  1024    -       32768   -
+EOD
+}
+
+function getAllProps {
+cat <<EOD
 zones   compression     on      local
 zones/f78f9208-9c26-47f7-9e03-881a96d17c04      compression     on      inherited from zones
 zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data compression     on      inherited from zones
 zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120430  compression     -       -
 EOD
+}
+
+case $1 in
+list)
+        if [ "$3" = "-t" -a "$4" = "snapshot" ] ; then
+                listSnaps
+        else
+                listFs
+        fi
+        ;;
+get)
+        getAllProps
         ;;
 esac
