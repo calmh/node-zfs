@@ -1,3 +1,5 @@
+/*globals describe: false, it: false */
+
 var assert = require('assert');
 var should = require('should');
 var zfs = require('zfs');
@@ -84,7 +86,7 @@ describe('zfs', function () {
                 value: '-',
                 source: '-'
             } ];
-            zfs.get({}, function (err, list) {
+            zfs.get({ property: 'compression' }, function (err, list) {
                 should.not.exist(err);
                 list.should.eql(expected);
                 done();
