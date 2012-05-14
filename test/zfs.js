@@ -59,7 +59,7 @@ describe('zfs', function () {
         });
     });
     describe('get', function (done) {
-        it('returns a list of all properties', function () {
+        it('returns a list of all properties', function (done) {
             var expected = [ {
                 name: 'zones',
                 property: 'compression',
@@ -90,7 +90,7 @@ describe('zfs', function () {
                 done();
             });
         });
-        it('returns a list of local properties', function () {
+        it('returns a list of local properties', function (done) {
             var expected = [ {
                 name: 'zones',
                 property: 'compression',
