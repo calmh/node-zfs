@@ -25,6 +25,10 @@ zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120430  compression     
 EOD
 }
 
+function getLocalProps {
+        getAllProps | grep local
+}
+
 case $1 in
 list)
         if [ "$3" = "-t" -a "$4" = "snapshot" ] ; then
@@ -34,6 +38,10 @@ list)
         fi
         ;;
 get)
-        getAllProps
+        if [ "$3" = "-s" -a "$4" = "local" ] ; then
+                getLocalProps
+        else
+                getAllProps
+        fi
         ;;
 esac
