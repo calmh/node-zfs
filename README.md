@@ -15,3 +15,7 @@ node-zfs is a simple wrapper around the `zfs` and `zpool` commands. It enables
 ZFS management scripting using Node.js under SmartOS, Solaris, OpenIndiana and
 FreeBSD. Possibly Linux too.
 
+License
+-------
+
+2-Clause BSD
