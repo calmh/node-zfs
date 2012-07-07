@@ -1,31 +1,37 @@
 {
-    "name": "zfs",
-    "description": "A Node.js wrapper around zfs/zpool",
-    "author": "Jakob Borg <jakob@nym.se> (http://nym.se/)",
-    "keywords": ["solaris", "zfs", "illumos", "openindiana", "smartos"],
-    "homepage": "http://nym.se/node-zfs/docs/",
-    "version": "0.0.2",
-    "main" : "lib/zfs.js",
-    "scripts": {
-        "test": "NODE_PATH=lib PATH=test:$PATH node_modules/.bin/mocha -R spec",
-        "hint": "jshint *.js lib/*.js",
-        "doc": "docco lib/* example.js 2>/dev/null",
-        "cov": "jscoverage lib lib-cov && EXPRESS_COV=1 NODE_PATH=lib-cov mocha -R html-cov > docs/coverage.html"
-    },
-    "dependencies": {
-        "underscore": "1.3.x"
-    },
-    "devDependencies": {
-        "jshint": "*",
-        "mocha": "*",
-        "should": "*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/calmh/node-zfs.git"
-    },
-    "bugs": {
-        "url": "http://github.com/calmh/node-zfs/issues",
-        "email": "node-zfs@nym.se"
-    }
+  "name": "zfs",
+  "description": "A Node.js wrapper around zfs/zpool",
+  "author": "Jakob Borg <jakob@nym.se> (http://nym.se/)",
+  "keywords": [
+    "solaris",
+    "zfs",
+    "illumos",
+    "openindiana",
+    "smartos"
+  ],
+  "homepage": "http://nym.se/node-zfs/docs/",
+  "version": "0.0.3",
+  "main": "lib/zfs.js",
+  "scripts": {
+    "test": "NODE_PATH=lib PATH=test:$PATH node_modules/.bin/mocha -R spec",
+    "hint": "jshint *.js lib/*.js",
+    "doc": "docco lib/* example.js 2>/dev/null",
+    "cov": "jscoverage lib lib-cov && EXPRESS_COV=1 NODE_PATH=lib-cov mocha -R html-cov > docs/coverage.html"
+  },
+  "dependencies": {
+    "underscore": "1.3.x"
+  },
+  "devDependencies": {
+    "jshint": "*",
+    "mocha": "*",
+    "should": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/calmh/node-zfs.git"
+  },
+  "bugs": {
+    "url": "http://github.com/calmh/node-zfs/issues",
+    "email": "node-zfs@nym.se"
+  }
 }
