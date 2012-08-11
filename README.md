@@ -18,4 +18,4 @@ FreeBSD. Possibly Linux too.
 License
 -------
 
-2-Clause BSD
+MIT
