@@ -10,7 +10,7 @@
     "smartos"
   ],
   "homepage": "http://nym.se/node-zfs/docs/",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "main": "lib/zfs.js",
   "scripts": {
     "test": "NODE_PATH=lib PATH=test:$PATH node_modules/.bin/mocha -R spec",
