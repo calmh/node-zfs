@@ -10,7 +10,7 @@
     "smartos"
   ],
   "homepage": "http://nym.se/node-zfs/docs/",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/zfs.js",
   "scripts": {
     "test": "NODE_PATH=lib PATH=test:$PATH node_modules/.bin/mocha -R spec",
@@ -18,8 +18,7 @@
     "doc": "docco lib/* example.js 2>/dev/null",
     "cov": "jscoverage lib lib-cov && EXPRESS_COV=1 NODE_PATH=lib-cov mocha -R html-cov > docs/coverage.html"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "jshint": "*",
     "mocha": "*",
