@@ -79,12 +79,12 @@ describe('zfs', function () {
                 name: 'zones/f78f9208-9c26-47f7-9e03-881a96d17c04',
                 property: 'compression',
                 value: 'on',
-                source: 'inherited'
+                source: 'inherited from zones'
             }, {
                 name: 'zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data',
                 property: 'compression',
                 value: 'on',
-                source: 'inherited'
+                source: 'inherited from zones'
             }, {
                 name: 'zones/f78f9208-9c26-47f7-9e03-881a96d17c04/data@daily-20120430',
                 property: 'compression',
