@@ -17,9 +17,20 @@ FreeBSD. Possibly Linux too.
 
 # Installation
 
-'''
+Using npm: 
+
+```
 $ npm install --save zfs
-'''
+```
+# Usage
+
+```
+var zfs-filesystem = require('zfs');
+```
+
+Now you can address the zfs library as follows:
+
+
 
 License
 -------
