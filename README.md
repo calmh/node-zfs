@@ -109,7 +109,7 @@ var opts = {
 zfs-filesystem.zfs.create(opts, function (err, output) {
     console.log(output);
 });
-``
+```
 
 ###ZFS Snapshot
 
