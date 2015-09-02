@@ -141,6 +141,56 @@ zfs-filesystem.zfs.clone(opts, function (err, output) {
 });
 ```
 
+### ZFS Send
+
+Initiates a send of a given snapshot and returns a readable stream. All possible options can be found inside the lib/zfs.js file.
+
+```
+var opts = {
+    snapshot : '/pool/dataset@snapshot',
+    verbose : true
+};
+
+zfs-filesystem.zfs.send(opts, function (err, sendStream) {
+    sendStream.on('error', function (err) {
+        console.error(err);
+    });
+
+    sendStream.on('verbose', function (data) {
+        console.log(data);
+    });
+
+    sendStream.pipe(process.stdout).on('end', function () {
+        console.log('done');
+    });
+});
+```
+
+### ZFS Receive
+
+Initiates a receive and returns a writable stream to which a send stream may be written. All possible options can be found inside the lib/zfs.js file.
+
+```
+var opts = {
+    dataset : '/pool2/dataset',
+    verbose : true
+};
+
+zfs-filesystem.zfs.receive(opts, function (err, receiveStream) {
+    receiveStream.on('error', function (err) {
+        console.error(err);
+    });
+
+    receiveStream.on('verbose', function (data) {
+        console.log(data);
+    });
+
+    process.stdin.pipe(receiveStream).on('end', function () {
+        console.log('done');
+    });
+});
+```
+
 ## Implemented commands for the ZPool tool
 
 ###ZPool Create
