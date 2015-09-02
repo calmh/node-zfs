@@ -118,7 +118,7 @@ Creates a snapshot with the given name. All possible options can be found inside
 ```js
 var opts = {
     name: 'my-new-snapshot-name',
-    dataset: 'my-dataset-name
+    dataset: 'my-dataset-name'
 };
 
 zfs-filesystem.zfs.snapshot(opts, function (err, output) {
