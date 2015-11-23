@@ -141,6 +141,21 @@ zfs-filesystem.zfs.clone(opts, function (err, output) {
 });
 ```
 
+
+### ZFS Mount
+
+Mount the filesystem with the specified name.
+
+```js
+var opts = {
+    dataset: 'my-filesystem-name'
+};
+
+zfs-filesystem.zfs.mount(opts, function (err, output) {
+    console.log(output);
+});
+```
+
 ### ZFS Send
 
 Initiates a send of a given snapshot and returns a readable stream. All possible options can be found inside the lib/zfs.js file.
