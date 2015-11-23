@@ -144,7 +144,7 @@ zfs-filesystem.zfs.clone(opts, function (err, output) {
 
 ### ZFS Mount
 
-Mount the filesystem with the specified name.
+Mount the filesystem with the specified name. All possible options can be found inside the lib/zfs.js file.
 
 ```js
 var opts = {
