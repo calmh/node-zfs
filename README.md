@@ -144,7 +144,7 @@ zfs-filesystem.zfs.clone(opts, function (err, output) {
 
 ### ZFS Mount
 
-Mount the filesystem with the specified name. All possible options can be found inside the lib/zfs.js file.
+Mount the filesystem with the specified name or all filesystems. All possible options can be found inside the lib/zfs.js file.
 
 ```js
 var opts = {
@@ -152,6 +152,20 @@ var opts = {
 };
 
 zfs-filesystem.zfs.mount(opts, function (err, output) {
+    console.log(output);
+});
+```
+### ZFS Unmount
+
+Unmount the filesystem or the mountpoint or all filesystems. All possible options can be found inside the lib/zfs.js file.
+
+```js
+var opts = {
+    name: 'my-filesystem-name',
+    force: true
+};
+
+zfs-filesystem.zfs.unmount(opts, function (err, output) {
     console.log(output);
 });
 ```
